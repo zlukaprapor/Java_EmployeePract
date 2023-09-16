@@ -9,6 +9,7 @@ package sumdu.edu.ua.java_employeepract;
  * @author Oleksii
  */
 public final class Employee {
+
     private int id;
     private static int nextId = 1;
     private String name;
@@ -22,12 +23,13 @@ public final class Employee {
         setSalary(salary);
     }
 
-    private void setId() {
-        this.id = nextId++;
-    }
-
     public int getId() {
         return id;
+    }
+
+    public void setId() {
+        this.id = nextId;
+        nextId++;
     }
 
     public String getName() {
@@ -36,7 +38,7 @@ public final class Employee {
 
     public void setName(String name) throws FieldLengthLimitException {
         if (name.length() > 50) {
-            throw new FieldLengthLimitException("Name length exceeds the limit (50 characters)");
+            throw new FieldLengthLimitException("Name lenght exceeds the limit");
         }
         this.name = name;
     }
@@ -47,7 +49,7 @@ public final class Employee {
 
     public void setSurname(String surname) throws FieldLengthLimitException {
         if (surname.length() > 50) {
-            throw new FieldLengthLimitException("Surname length exceeds the limit (50 characters)");
+            throw new FieldLengthLimitException("Surname lenght exceeds the limit");
         }
         this.surname = surname;
     }
@@ -58,13 +60,9 @@ public final class Employee {
 
     public void setSalary(double salary) throws IncorrectSalaryException {
         if (salary < 0) {
-            throw new IncorrectSalaryException("Salary cannot be negative");
+            throw new IncorrectSalaryException("Salary can't be negative");
         }
         this.salary = salary;
-    }
-
-    public static int getNextId() {
-        return nextId;
     }
 
 }

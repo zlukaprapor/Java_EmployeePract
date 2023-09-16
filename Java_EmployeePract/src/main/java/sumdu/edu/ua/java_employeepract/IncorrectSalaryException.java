@@ -8,9 +8,10 @@ package sumdu.edu.ua.java_employeepract;
  *
  * @author Oleksii
  */
-
 public class IncorrectSalaryException extends Exception {
+
     public IncorrectSalaryException(String message) {
         super(message);
     }
+
 }

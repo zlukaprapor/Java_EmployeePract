@@ -9,6 +9,7 @@ package sumdu.edu.ua.java_employeepract;
  * @author Oleksii
  */
 public class FieldLengthLimitException extends Exception {
+
     public FieldLengthLimitException(String message) {
         super(message);
     }
