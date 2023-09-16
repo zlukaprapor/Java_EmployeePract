@@ -17,10 +17,12 @@ public final class Employee {
     private double salary;
 
     public Employee(String name, String surname, double salary) throws FieldLengthLimitException, IncorrectSalaryException {
+
         setId();
         setName(name);
         setSurname(surname);
         setSalary(salary);
+
     }
 
     public int getId() {
@@ -37,8 +39,8 @@ public final class Employee {
     }
 
     public void setName(String name) throws FieldLengthLimitException {
-        if (name.length() > 50) {
-            throw new FieldLengthLimitException("Name lenght exceeds the limit");
+        if (name.length() > 20) {
+            throw new FieldLengthLimitException("Name lenght exceeds the limit 20 simbol");
         }
         this.name = name;
     }
@@ -48,8 +50,8 @@ public final class Employee {
     }
 
     public void setSurname(String surname) throws FieldLengthLimitException {
-        if (surname.length() > 50) {
-            throw new FieldLengthLimitException("Surname lenght exceeds the limit");
+        if (surname.length() > 20) {
+            throw new FieldLengthLimitException("Surname lenght exceeds the limit 20 simbol");
         }
         this.surname = surname;
     }
@@ -63,6 +65,10 @@ public final class Employee {
             throw new IncorrectSalaryException("Salary can't be negative");
         }
         this.salary = salary;
+    }
+
+    void PrintEmployeeId() {
+        System.out.println("Employee " + id + " created");
     }
 
 }
